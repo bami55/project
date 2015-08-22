@@ -1,0 +1,17 @@
+<h1>旅行計画追加</h1>
+
+<%= form_for @trip do |f| %>
+
+<p>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %>
+	<% if @trip.errors.any? %>
+	<%= @trip.errors.messages[:title][0] %>
+	<% end %>
+</p>
+
+<p>
+	<%= f.submit %>
+</p>
+
+<% end %>

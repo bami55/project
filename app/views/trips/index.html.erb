@@ -1,0 +1,13 @@
+<h1>旅行一覧</h1>
+
+<ul>
+	<% @trips.each do |trip| %>
+	<li>
+		<%= link_to trip.title, trip_path(trip.id) %>
+		<%= link_to "[編集]", edit_trip_path(trip.id) %>
+		<%= link_to "[削除]", trip_path(trip.id), method: :delete, data: { confirm: "削除しますか？" } %>
+	</li>
+	<% end %>
+</ul>
+
+<p><%= link_to "追加", new_trip_path %></p>

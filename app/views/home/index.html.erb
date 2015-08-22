@@ -1,0 +1,10 @@
+<h1>プロジェクト</h1>
+<% if user_signed_in? %>
+  ユーザー : <strong><%= current_user.name %></strong>.
+  <%= link_to "個人設定", edit_user_registration_path, :class => "navbar-link" %> |
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, :class => "navbar-link" %>
+<% else %>
+  <%= link_to "ユーザー登録", new_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "ログイン", new_user_session_path, :class => 'navbar-link' %>
+<% end %>
+

@@ -1,0 +1,15 @@
+<h1><%= @trip.title %></h1>
+<p><%= image_tag "jibaku.jpg" %></p>
+
+<ul>
+	<% @trip.spots.each do |spot| %>
+	<li><%= spot.item %></li>
+	<% end %>
+	<li>
+		<%= form_for [@trip, @trip.spots.build] do |f| %>
+		<%= f.text_field :item %>
+		<%= f.submit %>
+		<% end %>
+	</li>
+</ul>
+<%= link_to "戻る", trips_path %>
